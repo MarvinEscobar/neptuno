@@ -6,7 +6,7 @@ return [
     |--------------------------------------------------------------------------
     | PDO Fetch Style
     |--------------------------------------------------------------------------
-    | 
+    |
     | By default, database results will be returned as instances of the PHP
     | stdClass object; however, you may desire to retrieve records in an
     | array format for simplicity. Here you can tweak the fetch style.
@@ -65,6 +65,16 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+
+        'sqlsrv' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_HOST', 'localhost'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+    ],
 
         'pgsql' => [
             'driver' => 'pgsql',
