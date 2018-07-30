@@ -22,7 +22,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-5">
 					<h2>Formulario de Registro</h2>
-					<form action="{{ route('contacto.store') }}" method="post">
+					<form action="{{ route('registro.store') }}" method="POST">
 						<div class="form-group">
 							<input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" placeholder="Escriba Nombre" > {{ $errors->first('nombre') }}
 						</div>
@@ -33,7 +33,7 @@
 							<input type="text" class="form-control" name="contrasena" value="{{ old('contrasena') }}" placeholder="Escriba contrasena">	{{ $errors->first('contrasena') }}
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="confirmarcontrasena" value="{{ old('confirmarcontrasena') }}" placeholder="Confirmar Contrasena">	{{ $errors->first('confirmarcontrasena') }}
+							<input type="text" class="form-control" name="confcontrasena" value="{{ old('confirmarcontrasena') }}" placeholder="Confirmar Contrasena">	{{ $errors->first('confcontrasena') }}
 						</div>
 						<div class="form-group">
 							<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Escriba su Email">	{{ $errors->first('email') }}

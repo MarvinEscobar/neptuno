@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class CrudController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return 'Mostrar todos los usuario';
+        return 'Metodo Index ';
     }
 
     /**
@@ -23,7 +23,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return 'Formulario para crear usuario';
+        return 'Metodo create:Formulario para registrar';
     }
 
     /**
@@ -34,7 +34,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Guardar usuario';
+        return 'Metodo strore:Formulario para guardar nuevo usuario';
     }
 
     /**
@@ -45,7 +45,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        return 'Mostrar usuario con ID #'. $id;
+        return 'Muetra informacio del ID: ' . $id;
     }
 
     /**
@@ -56,7 +56,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        return 'Formulario para editar usuario con ID #'. $id;
+        return 'Para formulario de actualizacion: ' .$id;
     }
 
     /**
@@ -68,7 +68,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return 'Formulario para editar datos del usuario con ID #'. $id;
+        return 'Formulario para actualizar usuario con ID: ' . $id;
     }
 
     /**
@@ -79,6 +79,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        return 'Eliminar usuario con ID #' . $id;
+        return 'Formuario para eliminar usuario con ID: ' . $id;    
     }
 }
+

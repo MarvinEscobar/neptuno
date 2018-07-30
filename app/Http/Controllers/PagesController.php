@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\FormularioRequest;
 class PagesController extends Controller
 {
     public function home()
@@ -11,11 +11,14 @@ class PagesController extends Controller
     	return view("home");
     }
 
-    public function registro()
-    {
-    	return view("registro");
+    public function showForm()
+    {   
+        return view("registro");
     }
-
+    public function store(FormularioRequest $request)
+    {
+    	return $request->all();
+    }
     // public function login()
     // {
     // 	return view("login");

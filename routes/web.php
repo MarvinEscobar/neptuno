@@ -1,18 +1,8 @@
 <?php
+Route::get('/','PagesController@home');
 
-Route::get('/', 'PagesController@home');
+Route::get('/registro', 'PagesController@showForm')->name('registro.showForm');
+Route::post('/registro','PagesController@store')->name('registro.store');
+Route::get('/login','PagesController@login');
 
-Route::get('/registro', 'PagesController@registro');
-
-Route::get('/login', 'PagesController@login')->name('auth.login');
-
-Route::get('/login', function()
-{
-	return 'pagina de login';
-})->name('auth.login');
-
-
-Route::get('/contacto', 'ContactController@showForm');
-
-Route::post('/contacto', 'ContactController@store')->name('contacto.store');
-
+//Route::resource('usuarios', 'CrudController');

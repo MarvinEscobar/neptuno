@@ -1,6 +1,6 @@
 <nav>
 			<ul>
-				<li><a href="#">Registro</a></li>
-				<li><a href="#">Login</a></li>
+				<li><a href="registro">Registro</a></li>
+				<li><a href="login">Login</a></li>
 			</ul>
 		</nav>

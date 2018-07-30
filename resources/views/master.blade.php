@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	@include("includes.nav")	
+		
 	<div class="container">
 		
 		@yield("content")

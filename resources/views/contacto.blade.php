@@ -12,7 +12,7 @@
 		<div class="row justify-content-center">
 			<div class="col-md-5">
 				<h2>Enviar mensaje</h2>
-				<form action="{{ route('contacto.store') }}" method="get">
+				<form action="{{ route('contacto.store') }}" method="post">
 					<div class="form-group">
 						<input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" placeholder="Escriba su Nombre" > {{ $errors->first('nombre') }}
 					</div>
