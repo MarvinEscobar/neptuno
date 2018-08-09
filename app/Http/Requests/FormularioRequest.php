@@ -27,8 +27,8 @@ class FormularioRequest extends FormRequest
             'nombre' => 'required',
             'usuario' => 'required',
             'contrasena' => 'required',
-            'confconfirmar' => 'required',
-            'email' => 'required',
+            'confcontrasena' => 'required',
+            'email' => 'required|email',
             'idrol' => 'required',
 
         ];

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CrudController extends Controller
+class RestaurantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class CrudController extends Controller
      */
     public function index()
     {
-        return 'Metodo Index ';
+        return view ("restaurants.index");
     }
 
     /**
@@ -23,7 +23,7 @@ class CrudController extends Controller
      */
     public function create()
     {
-        return 'Metodo create:Formulario para registrar';
+        //
     }
 
     /**
@@ -34,7 +34,7 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Metodo strore:Formulario para guardar nuevo usuario';
+        //
     }
 
     /**
@@ -45,7 +45,7 @@ class CrudController extends Controller
      */
     public function show($id)
     {
-        return 'Muetra informacio del ID: ' . $id;
+        //
     }
 
     /**
@@ -56,7 +56,7 @@ class CrudController extends Controller
      */
     public function edit($id)
     {
-        return 'Para formulario de actualizacion: ' .$id;
+        //
     }
 
     /**
@@ -68,7 +68,7 @@ class CrudController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return 'Formulario para actualizar usuario con ID: ' . $id;
+        //
     }
 
     /**
@@ -79,7 +79,6 @@ class CrudController extends Controller
      */
     public function destroy($id)
     {
-        return 'Formuario para eliminar usuario con ID: ' . $id;    
+        //
     }
 }
-
