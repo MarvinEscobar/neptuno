@@ -13,6 +13,8 @@ use Faker\Generator as Faker;
 |
 */
 
+//para agregar usuarios fake
+
 $factory->define(App\User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
