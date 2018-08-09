@@ -52,5 +52,10 @@
         <li class="nav-item">
         <a class="nav-link" href="{{ route('fechas_inv.index') }}">Fechas de inventario</a>
         </li>  
-    @endcan                           
+    @endcan      
+          @can('fechas_inv.index')
+        <li class="nav-item">
+        <a class="nav-link" href="{{ route('fechas_inv.index') }}">Fechas de inventario</a>
+        </li>  
+    @endcan                        
 </ul>
