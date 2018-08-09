@@ -12,11 +12,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container head">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -35,16 +36,17 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    @include("includes.nav_log")                    
-                    @include("includes.nav_role_user")
-                    @include("includes.nav_adm_product")
-
+                    @include("includes.nav_log")                        
                     <!-- Right Side Of Navbar -->
                     
                 </div>
 
             </div>
         </nav>
+        <div class="sidebar-panel">
+            @include("includes.nav_role_user")
+            @include("includes.nav_adm_product")
+        </div>
             @if(session('info'))
                 <div class="contar">
                     <div class="row">
@@ -61,7 +63,9 @@
                     
                 </div>
             @endif
-        @yield('content')
+        <div class="content-panel">
+            @yield('content')
+        </div>
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

@@ -1,0 +1,28 @@
+#app .navbar-default {
+  border: none; }
+#app .sidebar-panel {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: #fff; }
+  #app .sidebar-panel .navbar-nav {
+    display: block;
+    width: 100%; }
+    #app .sidebar-panel .navbar-nav li {
+      display: block;
+      width: 100%;
+      text-align: left; }
+      #app .sidebar-panel .navbar-nav li a {
+        padding-left: 40px;
+        color: #2f2f2f; }
+#app .content-panel {
+  padding-left: 240px; }
+  #app .content-panel .container {
+    width: 100%; }
+#app .head {
+  width: 100%;
+  padding: 0px 40px; }
+
+/*# sourceMappingURL=main.css.map */
