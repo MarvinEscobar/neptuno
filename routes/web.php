@@ -81,3 +81,5 @@ Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')->midd
 });
 
 Route::get('restaurants.index', 'RestaurantController@index')->name('restaurants.index')->middleware('permission:restaurants.index');
+
+Route::get('empresas.index', 'EmpresaController@index')->name('empresas.index')->middleware('permission:empresas.index');

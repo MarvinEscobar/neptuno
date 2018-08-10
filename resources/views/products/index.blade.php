@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Productos
+                    <b>Productos</b>
                     @can('products.create')
                     <a href="{{ route('products.create') }}" 
                     class="btn btn-sm btn-primary pull-right">

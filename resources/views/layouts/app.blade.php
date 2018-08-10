@@ -29,7 +29,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         {{ config('app.name', '') }}
                     </a>
                 </div>
@@ -48,14 +48,14 @@
             @include("includes.nav_adm_product")
         </div>
             @if(session('info'))
-                <div class="contar">
+                <div class="container alert">
                     <div class="row">
                         <div class="col-md8 clo-md-offset-2">
                             <div class="alert alert-success">
                                 {{ session('info') }}
                                 
                             </div>
-                                }
+                                
                             
                         </div>
                         
