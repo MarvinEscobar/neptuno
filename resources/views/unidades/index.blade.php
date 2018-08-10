@@ -6,9 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <b>Empresas</b>
-                    {{-- @can('empresas.create')
-                    <a href="{{ route('empresas.create') }}" 
+                    <b>Unidad de venta</b>
+               {{--      @can('unidades.create')
+                    <a href="{{ route('unidades.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
                         Crear
                     </a>
@@ -20,34 +20,34 @@
                         <thead>
                             <tr>
                                 <th width="10px">   ID</th>
-                                <th>                empresa</th>
+                                <th>                Nombre</th>
                                 <th colspan="3">    &nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                        {{--     @foreach($empresas as $empresa)
+                           {{--  @foreach($unidades as $unidad)
                             <tr>
-                                <td>{{ $empresa->id }}</td>
-                                <td>{{ $empresa->name }}</td>
-                                @can('empresas.show')
+                                <td>{{ $unidad->id }}</td>
+                                <td>{{ $unidad->name }}</td>
+                                @can('unidades.show')
                                 <td width="10px">
-                                    <a href="{{ route('empresas.show', $empresa->id) }}" 
+                                    <a href="{{ route('unidades.show', $unidad->id) }}" 
                                     class="btn btn-sm btn-default">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                                @can('empresas.edit')
+                                @can('unidades.edit')
                                 <td width="10px">
-                                    <a href="{{ route('empresas.edit', $empresa->id) }}" 
+                                    <a href="{{ route('unidades.edit', $unidad->id) }}" 
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
                                 </td>
                                 @endcan
-                                @can('empresas.destroy')
+                                @can('unidades.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['empresas.destroy', $empresa->id], 
+                                    {!! Form::open(['route' => ['unidades.destroy', $unidad->id], 
                                     'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
@@ -59,7 +59,7 @@
                             @endforeach --}}
                         </tbody>
                     </table>
-                   {{--  {{ $empresas->render() }} --}}
+                {{--     {{ $unidades->render() }} --}}
                 </div>
             </div>
         </div>

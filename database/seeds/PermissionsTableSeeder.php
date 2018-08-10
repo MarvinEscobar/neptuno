@@ -103,6 +103,58 @@ class PermissionsTableSeeder extends Seeder
        		'description' => 'Eliminar productos',
 
         ]);
+
+//Administracion de productos
+//
+          Permission::create([
+          'name' => 'Navegar en listado de restaurantes',
+          'slug' => 'restaurants.index',
+          'description' => 'Ver lista y navega en restaurantes ',
+
+        ]);
+          Permission::create([
+          'name' => 'Navegar en listado de empresa',
+          'slug' => 'empresas.index',
+          'description' => 'Ver lista y navega en pagina empresa ',
+
+        ]);
+
+          Permission::create([
+          'name' => 'Navegar en listado de plus',
+          'slug' => 'plus.index',
+          'description' => 'Ver lista y navega en PLUS ',
+
+        ]);
+
+          Permission::create([
+          'name' => 'Navegar en listado de recetas',
+          'slug' => 'recetas.index',
+          'description' => 'Ver lista y navega en recetas ',
+
+        ]);
+
+          Permission::create([
+          'name' => 'Navegar en listado de unidades de medida',
+          'slug' => 'unidades.index',
+          'description' => 'Ver lista y navega en unidades de medida ',
+
+        ]);
+
+          Permission::create([
+          'name' => 'Navegar en listado de canales de ventas',
+          'slug' => 'canales.index',
+          'description' => 'Ver lista y navega en canales de ventas ',
+
+        ]);
+
+          Permission::create([
+          'name' => 'Navegar en listado de fechas de inventario',
+          'slug' => 'fechas.index',
+          'description' => 'Ver lista y navega en fechas de inventaris ',
+
+        ]);
+
+
         
     }
 }

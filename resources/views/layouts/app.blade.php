@@ -44,8 +44,7 @@
             </div>
         </nav>
         <div class="sidebar-panel">
-            @include("includes.nav_role_user")
-            @include("includes.nav_adm_product")
+            @include("includes.nav")        
         </div>
             @if(session('info'))
                 <div class="container alert">

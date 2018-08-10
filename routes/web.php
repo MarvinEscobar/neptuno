@@ -8,23 +8,6 @@ Route::get ('/', function() {
 });
 
 
-
-
-//Route::get('/home','PagesController@index')->name('home');
-
-// //Ruta para enviar a mostrar el formulario
-// Route::get('/registro', 'PagesController@showForm')->name('registro.showForm');
-
-// //Ruta para enviar a validar los campos del formulario
-// Route::post('/registro','PagesController@val')->name('registro.val');
-
-// //Ruta para validar los campos del login y el acceso al CRUD
-// Route::get('/login','PagesController@showLogin')->name('login.showLogin');
-
-// Route::post('/login','PagesController@vallog')->name('auth.login')->middleware("idrol");
-
-// //Ruta para administrar los recursos
-// Route::resource('usuarios', 'CrudController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -76,10 +59,22 @@ Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy')->
 
 Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')->middleware('permission:users.edit');
 
+//Administracion de productos
 
+Route::get('restaurants.index', 'AdminproductController@indexRestaurants')->name('restaurants.index')->middleware('permission:restaurants.index');
+
+		
+Route::get('empresas.index', 'AdminproductController@indexEmpresas')->name('empresas.index')->middleware('permission:empresas.index');
+
+Route::get('plus.index', 'AdminproductController@indexPlus')->name('plus.index')->middleware('permission:plus.index');
+
+Route::get('recetas.index', 'AdminproductController@indexRecetas')->name('recetas.index')->middleware('permission:recetas.index');
+
+Route::get('unidades.index', 'AdminproductController@indexUnidades')->name('unidades.index')->middleware('permission:unidades.index');
+
+Route::get('canales.index', 'AdminproductController@indexCanales')->name('canales.index')->middleware('permission:canales.index');
+
+Route::get('fechas.index', 'AdminproductController@indexFechas')->name('fechas.index')->middleware('permission:fechas.index');
 
 });
 
-Route::get('restaurants.index', 'RestaurantController@index')->name('restaurants.index')->middleware('permission:restaurants.index');
-
-Route::get('empresas.index', 'EmpresaController@index')->name('empresas.index')->middleware('permission:empresas.index');

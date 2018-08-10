@@ -6,9 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <b>Empresas</b>
-                    {{-- @can('empresas.create')
-                    <a href="{{ route('empresas.create') }}" 
+                    <b>Recetas</b>
+             {{--        @can('recetas.create')
+                    <a href="{{ route('recetas.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
                         Crear
                     </a>
@@ -20,34 +20,35 @@
                         <thead>
                             <tr>
                                 <th width="10px">   ID</th>
-                                <th>                empresa</th>
+                                <th>                Nombre</th>
+                                <th>                Descripción</th>
                                 <th colspan="3">    &nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                        {{--     @foreach($empresas as $empresa)
+                            {{-- @foreach($recetas as $receta)
                             <tr>
-                                <td>{{ $empresa->id }}</td>
-                                <td>{{ $empresa->name }}</td>
-                                @can('empresas.show')
+                                <td>{{ $receta->id }}</td>
+                                <td>{{ $receta->name }}</td>
+                                @can('recetas.show')
                                 <td width="10px">
-                                    <a href="{{ route('empresas.show', $empresa->id) }}" 
+                                    <a href="{{ route('recetas.show', $receta->id) }}" 
                                     class="btn btn-sm btn-default">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                                @can('empresas.edit')
+                                @can('recetas.edit')
                                 <td width="10px">
-                                    <a href="{{ route('empresas.edit', $empresa->id) }}" 
+                                    <a href="{{ route('recetas.edit', $receta->id) }}" 
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
                                 </td>
                                 @endcan
-                                @can('empresas.destroy')
+                                @can('recetas.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['empresas.destroy', $empresa->id], 
+                                    {!! Form::open(['route' => ['recetas.destroy', $receta->id], 
                                     'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
@@ -59,7 +60,7 @@
                             @endforeach --}}
                         </tbody>
                     </table>
-                   {{--  {{ $empresas->render() }} --}}
+                    {{-- {{ $recetas->render() }} --}}
                 </div>
             </div>
         </div>
