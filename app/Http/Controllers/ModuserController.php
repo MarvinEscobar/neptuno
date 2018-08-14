@@ -16,7 +16,7 @@ class ModuserController extends Controller
 //ENTRADA DE SUMINISTROS
     public function indexEntradas()
     {
-        return view ("entradas.index");        
+        return view ("userestaurant/entradas.index");        
     }
 
     //  public function createRestaurants()

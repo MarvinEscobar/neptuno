@@ -19,17 +19,13 @@ Route::middleware(['auth'])->group(function(){
 Route::resource('/roles', 'RoleController');
 
 //Products
-
 Route::resource('products', 'ProductController');
 
 //Users
-
 Route::resource('users', 'UserController');
 
 //Administracion de productos
-
 Route::get('restaurants.index', 'AdminproductController@indexRestaurants')->name('restaurants.index')->middleware('permission:restaurants.index');
-
 		
 Route::get('empresas.index', 'AdminproductController@indexEmpresas')->name('empresas.index')->middleware('permission:empresas.index');
 
@@ -45,7 +41,7 @@ Route::get('fechas.index', 'AdminproductController@indexFechas')->name('fechas.i
 
 
 //Modulo de Usuario
-Route::get('userestaurant/entradas.index', 'ModuserController@indexImpexternas')->name('entradas.index')->middleware('permission:entradas.index');
+Route::get('userestaurant/entradas.index', 'ModuserController@indexEntradas')->name('entradas.index')->middleware('permission:entradas.index');
 
 Route::get('userestaurant/impexternas.index', 'ModuserController@indexImpexternas')->name('impexternas.index')->middleware('permission:impexternas.index');
 		

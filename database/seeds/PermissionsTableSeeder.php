@@ -71,43 +71,13 @@ class PermissionsTableSeeder extends Seeder
           'name' => 'Eliminar productos',
           'slug' => 'products.destroy',
           'description' => 'Eliminar producto',]);
-//Modulo Administrador
-       Permission::create([
-          'name' => 'Navegar en listado de restaurantes',
-          'slug' => 'restaurants.index',
-          'description' => 'Ver listado de restaurantes ',]);
-        Permission::create([
-          'name' => 'Navegar en listado de empresa',
-          'slug' => 'empresas.index',
-          'description' => 'ver listado de empresas ',]);
-        Permission::create([
-          'name' => 'Navegar en listado de PLUS',
-          'slug' => 'plus.index',
-          'description' => 'ver listado de PLUS ', ]);
-        Permission::create([
-          'name' => 'Navegar en listado de recetas',
-          'slug' => 'recetas.index',
-          'description' => 'Ver lista de recetas ',]);        
-         Permission::create([
-          'name' => 'Navegar en listado de unidades de medidas',
-          'slug' => 'unidades.index',
-          'description' => 'Ver listado de unidades de medida ',]);
-        Permission::create([
-          'name' => 'Navegar en listado de canales de ventas',
-          'slug' => 'canales.index',
-          'description' => 'Ver lista de canales de ventas ',]);
-      Permission::create([
-          'name' => 'Navegar en listado de fechas de inventario',
-          'slug' => 'fechas.index',
-          'description' => 'Ver listado de fechas de inventario ',]);
-
 
 //MODULOS DE USUARIO(RESTAURANTES)
-
         permission::create([
           'name' => 'Navegar en listado entradas de suministros',
           'slug' => 'entradas.index',
           'description' => 'Ver listado de entradas',]);
+        
         permission::create([
           'name' => 'Navegar en listado de importaciones',
           'slug' => 'impexternas.index',
@@ -123,16 +93,57 @@ class PermissionsTableSeeder extends Seeder
         permission::create([
           'name' => 'Navegar listado de descargas',
           'slug' => 'descargas.index',
-          'description' => 'Ver listado de descargas',]);
-        
+          'description' => 'Ver listado de descargas',]);        
         permission::create([
           'name' => 'Navegar en reportes',
           'slug' => 'reportes.index',
-          'description' => '',]);
+          'description' =>'Ver listado de reportes',]);
+        permission::create([
+          'name' => 'Navegar en Existencia final',
+          'slug' => 'existentes.index',
+          'description' =>'Ver listado de Existencias',]);
+        permission::create([
+          'name' => 'Navegar en Cuadratura',
+          'slug' => 'cuadraturas.index',
+          'description' =>'Ver listado de Cuadratura',]);
+        permission::create([
+          'name' => 'Navegar en cierre',
+          'slug' => 'cierres.index',
+          'description' =>'Ver listado de cierre',]);
+        Permission::create([
+          'name' => 'Navegar en listado de restaurantes',
+          'slug' => 'restaurants.index',
+          'description' => 'Ver listado de restaurantes ',]);
+//Modulo Administrador
+        Permission::create([
+          'name' => 'Navegar en listado de empresa',
+          'slug' => 'empresas.index',
+          'description' => 'ver listado de empresas ',]);
+        Permission::create([
+          'name' => 'Navegar en listado de PLUS',
+          'slug' => 'plus.index',
+          'description' => 'ver listado de PLUS ', ]);
+        Permission::create([
+          'name' => 'Navegar en listado de recetas',
+          'slug' => 'recetas.index',
+          'description' => 'Ver lista de recetas ',]);        
+        Permission::create([
+          'name' => 'Navegar en listado de unidades de medidas',
+          'slug' => 'unidades.index',
+          'description' => 'Ver listado de unidades de medida ',]);
+        Permission::create([
+          'name' => 'Navegar en listado de canales de ventas',
+          'slug' => 'canales.index',
+          'description' => 'Ver lista de canales de ventas ',]);
+        Permission::create([
+          'name' => 'Navegar en listado de fechas de inventario',
+          'slug' => 'fechas.index',
+          'description' => 'Ver listado de fechas de inventario ',]);
 
-                
-      }   
-}        
+       }
+         
+}
+        
 
 
 

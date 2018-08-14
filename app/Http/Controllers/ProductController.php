@@ -9,6 +9,7 @@ class ProductController extends Controller
 {
 
     public function __construct(){
+        
         $this->middleware('permission:products.create')->only('create','store');
 
         $this->middleware('permission:products.index')->only('index');
