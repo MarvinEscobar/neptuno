@@ -16,48 +16,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['auth'])->group(function(){
 
 //Roles
-//
-Route::post('roles/store', 'RoleController@store')->name('roles.store')->middleware('permission:roles.create');
-
-Route::get('roles', 'RoleController@index')->name('roles.index')->middleware('permission:roles.index');
-
-Route::get('roles/create', 'RoleController@create')->name('roles.create')->middleware('permission:roles.create');
-
-Route::put('roles/{role}', 'RoleController@update')->name('roles.update')->middleware('permission:roles.edit');
-
-Route::get('roles/{role}', 'RoleController@show')->name('roles.show')->middleware('permission:roles.show');
-
-Route::delete('roles/{role}', 'RoleController@destroy')->name('roles.destroy')->middleware('permission:roles.destroy');
-
-Route::get('roles/{role}/edit', 'RoleController@edit')->name('roles.edit')->middleware('permission:roles.edit');
+Route::resource('/roles', 'RoleController');
 
 //Products
 
-Route::post('products/store', 'ProductController@store')->name('products.store')->middleware('permission:products.create');
-
-Route::get('products', 'ProductController@index')->name('products.index')->middleware('permission:products.index');
-
-Route::get('products/create', 'ProductController@create')->name('products.create')->middleware('permission:products.create');
-
-Route::put('products/{product}', 'ProductController@update')->name('products.update')->middleware('permission:products.edit');
-
-Route::get('products/{product}', 'ProductController@show')->name('products.show')->middleware('permission:products.show');
-
-Route::delete('products/{product}', 'ProductController@destroy')->name('products.destroy')->middleware('permission:products.destroy');
-
-Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit')->middleware('permission:products.edit');
+Route::resource('products', 'ProductController');
 
 //Users
 
-Route::get('users', 'UserController@index')->name('users.index')->middleware('permission:users.index');
-
-Route::put('users/{user}', 'UserController@update')->name('users.update')->middleware('permission:users.edit');
-
-Route::get('users/{user}', 'UserController@show')->name('users.show')->middleware('permission:users.show');
-
-Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy')->middleware('permission:users.destroy');
-
-Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')->middleware('permission:users.edit');
+Route::resource('users', 'UserController');
 
 //Administracion de productos
 
@@ -76,5 +43,24 @@ Route::get('canales.index', 'AdminproductController@indexCanales')->name('canale
 
 Route::get('fechas.index', 'AdminproductController@indexFechas')->name('fechas.index')->middleware('permission:fechas.index');
 
+
+//Modulo de Usuario
+Route::get('userestaurant/entradas.index', 'ModuserController@indexImpexternas')->name('entradas.index')->middleware('permission:entradas.index');
+
+Route::get('userestaurant/impexternas.index', 'ModuserController@indexImpexternas')->name('impexternas.index')->middleware('permission:impexternas.index');
+		
+Route::get('userestaurant/salidas.index', 'ModuserController@indexSalidas')->name('salidas.index')->middleware('permission:salidas.index');
+
+Route::get('userestaurant/destruidos.index', 'ModuserController@indexDestruidos')->name('destruidos.index')->middleware('permission:destruidos.index');
+
+Route::get('userestaurant/descargas.index', 'ModuserController@indexDescargas')->name('descargas.index')->middleware('permission:descargas.index');
+
+Route::get('userestaurant/reportes.index', 'ModuserController@indexReportes')->name('reportes.index')->middleware('permission:reportes.index');
+
+Route::get('userestaurant/existentes.index', 'ModuserController@indexExistentes')->name('existentes.index')->middleware('permission:existentes.index');
+
+Route::get('userestaurant/cuadraturas.index', 'ModuserController@indexCuadraturas')->name('cuadraturas.index')->middleware('permission:cuadraturas.index');
+
+Route::get('userestaurant/cierres.index', 'ModuserController@indexCierres')->name('cierres.index')->middleware('permission:cierres.index');
 });
 

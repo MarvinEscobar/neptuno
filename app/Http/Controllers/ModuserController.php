@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminproductController extends Controller
+class ModuserController extends Controller
 {
  
     /**
@@ -13,10 +13,10 @@ class AdminproductController extends Controller
      * @return \Illuminate\Http\Response
      */
     //restaurants
-//RESTAURANTES
-    public function indexRestaurants()
+//ENTRADA DE SUMINISTROS
+    public function indexEntradas()
     {
-        return view ("restaurants.index");        
+        return view ("entradas.index");        
     }
 
     //  public function createRestaurants()
@@ -33,41 +33,52 @@ class AdminproductController extends Controller
     // }
 
     
-//EMPRESAS
-    public function indexEmpresas()
+//IMPORTACIONES DE VENTAS DE ORIGENES EXTERNOS
+    public function indexImpexternas()
     {
-        return view('empresas.index');
+        return view('userestaurant/impexternas.index');
     }
-//PLUS
-    public function indexPlus()
+//SALIDA DE SUMINISTROS
+    public function indexSalidas()
     {
-        return view ("plus.index");
+        return view ("userestaurant/salidas.index");
     }
 //RECETAS
-    public function indexRecetas()
+    public function indexDestruidos()
     {
-        return view ("recetas.index");
+        return view ("userestaurant/destruidos.index");
     }
-//Unidades de Medida
-    public function indexUnidades()
+//DESCARGA DE INVENTARIOS
+    public function indexDescargas()
     {
-        return view ("unidades.index");
+        return view ("userestaurant/descargas.index");
     }
 
-//Canales de Venta
-    public function indexCanales()
+//REPORTES
+    public function indexReportes()
     {
-        return view ("canales.index");
+        return view ("userestaurant/reportes.index");
     }
-//Fechas de inventario
-    public function indexFechas()
+//EXISTENCIA FINAL   
+    public function indexExistentes()
     {
-        return view ("fechas.index");
+        return view ("userestaurant/existentes.index");
     }
-       
+//CUADRATURA
+       public function indexCuadraturas()
+    {
+        return view ("userestaurant/cuadraturas.index");
+    }
+//CIERRE DE INVENTARIO
+        public function indexCierres()
+    {
+        return view ("userestaurant/cierres.index");
+    }
 
+      
     /**
-     * Show the form for create_function(args, code)ng a new resource.
+    /**
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
