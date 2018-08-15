@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Tipomoviento;
 class ModuserController extends Controller
 {
  
@@ -16,7 +16,9 @@ class ModuserController extends Controller
 //ENTRADA DE SUMINISTROS
     public function indexEntradas()
     {
-        return view ("userestaurant/entradas.index");        
+        $tipo = Tipomoviento::All();
+            return $tipo;
+        //return view ("userestaurant/entradas.index");        
     }
 
     //  public function createRestaurants()
