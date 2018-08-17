@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tipomoviento;
+use App\Tipomovimiento;
+use App\Clasemovimiento;
 class ModuserController extends Controller
 {
  
@@ -14,10 +15,19 @@ class ModuserController extends Controller
      */
     //restaurants
 //ENTRADA DE SUMINISTROS
-    public function indexEntradas()
+    public function indexEntradas() 
     {
-        $tipo = Tipomoviento::All();
-            return $tipo;
+        // $tipo = Tipomovimiento::All();
+        //     return $tipo;
+        // $clase = Clasemovimiento::All();
+        //     return $clase;
+        $tipo = Tipomovimiento::findOrFail(2);
+        return $tipo->clasemovimiento;
+
+       // $clase = Clasemovimiento::findOrFail(2);
+       //  return $clase->tipomovimiento;
+
+
         //return view ("userestaurant/entradas.index");        
     }
 

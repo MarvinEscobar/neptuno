@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tipomoviento extends Model
+class Tipomovimiento extends Model
 {
 	//Buscara una tabla en la base de datos con el nombre asignado.
 	protected $table = 'TIPO_MOV';
@@ -16,5 +16,12 @@ class Tipomoviento extends Model
 	//protected $keyType = 'integer';
 	public $timestamps = false;    
 
-	//public function clases
+	// public function clasemovimiento ()
+	// {
+	// 	return $this->hasOne(Clasemovimiento::class,'ID_TipoMov','ID_TipoMov');
+	// }
+	public function clasemovimiento ()
+	{
+		return $this->hasMany(Clasemovimiento::class,'ID_TipoMov','ID_TipoMov');
+	}
 }
