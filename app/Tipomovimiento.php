@@ -16,12 +16,20 @@ class Tipomovimiento extends Model
 	//protected $keyType = 'integer';
 	public $timestamps = false;    
 
-	// public function clasemovimiento ()
+	// public function clasemovimiento()
 	// {
 	// 	return $this->hasOne(Clasemovimiento::class,'ID_TipoMov','ID_TipoMov');
 	// }
-	public function clasemovimiento ()
+	
+	// public function clasemovimiento()
+	// {
+	// 	return $this->hasMany(Clasemovimiento::class,'ID_TipoMov','ID_TipoMov');
+	// }
+	
+	public function clasemovimiento()
 	{
-		return $this->hasMany(Clasemovimiento::class,'ID_TipoMov','ID_TipoMov');
+		return $this->belongsToMany(Clasemovimiento::class, 'MOVIMIENTO_DIA', 'ID_TipoMov', 'ID_ClaseMov');
 	}
+
+
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tipomovimiento;
 use App\Clasemovimiento;
+use DB;
 class ModuserController extends Controller
 {
  
@@ -17,18 +18,24 @@ class ModuserController extends Controller
 //ENTRADA DE SUMINISTROS
     public function indexEntradas() 
     {
-        // $tipo = Tipomovimiento::All();
-        //     return $tipo;
-        // $clase = Clasemovimiento::All();
-        //     return $clase;
-        $tipo = Tipomovimiento::findOrFail(2);
-        return $tipo->clasemovimiento;
+  /*      $tipo = Tipomovimiento::All();
+            return $tipo;
+        $clase = Clasemovimiento::All();
+            return $clase;*/
+        
+        $tipo = Tipomovimiento::findOrFail(2);//busca el tipo
+        dd($tipo);
+       return $tipo->clasemovimiento;//mostrame las clases relacionadas al tipo
 
-       // $clase = Clasemovimiento::findOrFail(2);
-       //  return $clase->tipomovimiento;
+           
+
+       // $clase = Clasemovimiento::findOrFail(1);        
+       // return $clase->tipomovimiento;
+  
 
 
-        //return view ("userestaurant/entradas.index");        
+  
+        //return view ("userestaurant/entradas.index"); //produccion       
     }
 
     //  public function createRestaurants()
@@ -55,7 +62,7 @@ class ModuserController extends Controller
     {
         return view ("userestaurant/salidas.index");
     }
-//RECETAS
+//DESTRUIR
     public function indexDestruidos()
     {
         return view ("userestaurant/destruidos.index");
@@ -96,11 +103,7 @@ class ModuserController extends Controller
      */
     public function create()
     {
-        //recetas.create
-        //recetas.show
-        //recetas.edit
-        //recetas.destroy
-        //recetas.index
+       //
     }
 
     /**

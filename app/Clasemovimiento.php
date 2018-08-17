@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clasemovimiento extends Model
 {
-    	//Buscara una tabla en la base de datos con el nombre asignado.
+    //Buscara una tabla en la base de datos con el nombre asignado.
 	protected $table = 'CLASE_MOV';
 	//Se define la llave primaria si no esta con la covencion
 	protected $primaryKey = 'ID_ClaseMov';
@@ -18,6 +18,7 @@ class Clasemovimiento extends Model
 
 	public function tipomovimiento ()
 	{
-		return $this->belongsTo(Tipomovimiento::class);
+		return $this->belongsToMany(Tipomovimiento::class,'ID_ClaseMov');
 	}
+
 }
