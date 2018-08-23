@@ -11,7 +11,7 @@ class Tipomovimiento extends Model
 	//Se define la llave primaria si no esta con la covencion
 	protected $primaryKey = 'ID_TipoMov';
 	//Se define si es incremental o no
-	public $incrementing = false;
+	public $incrementing = true;
 	//Define el tipo de variable
 	//protected $keyType = 'integer';
 	public $timestamps = false;    

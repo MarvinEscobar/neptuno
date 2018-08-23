@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+//use App/Tipomovimiento;
 class Clasemovimiento extends Model
 {
     //Buscara una tabla en la base de datos con el nombre asignado.
@@ -16,9 +16,9 @@ class Clasemovimiento extends Model
 	//protected $keyType = 'integer';
 	public $timestamps = false;    
 
-	public function tipomovimiento ()
-	{
-		return $this->belongsToMany(Tipomovimiento::class,'ID_ClaseMov');
-	}
+	// public function tipomovimiento ()
+	// {
+	// 	return $this->belongsToMany(Tipomovimiento::class,'ID_TipoMov');
+	// }
 
 }

@@ -9,47 +9,22 @@ use DB;
 class ModuserController extends Controller
 {
  
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    //restaurants
 //ENTRADA DE SUMINISTROS
     public function indexEntradas() 
     {
-  /*      $tipo = Tipomovimiento::All();
-            return $tipo;
-        $clase = Clasemovimiento::All();
-            return $clase;*/
-        
-        $tipo = Tipomovimiento::findOrFail(2);//busca el tipo
-        dd($tipo);
-       return $tipo->clasemovimiento;//mostrame las clases relacionadas al tipo
-
-           
-
-       // $clase = Clasemovimiento::findOrFail(1);        
-       // return $clase->tipomovimiento;
-  
 
 
-  
-        //return view ("userestaurant/entradas.index"); //produccion       
-    }
-
-    //  public function createRestaurants()
-    // {
-    //     return view('restaurants.create');
-    // }
-
-    // public function store(Request $request)
-    // {
-    //     $product = Product::create($request->all());
+}
+     public function createRestaurants()
+    {
+   
+        $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+            $result = DB::statement($sql,array('I',11000001,200,1,1,NULL,NULL,NULL,'','0011-2233',0,8,1,'20120618',100104,'20120618',0));
+                var_dump($result);
 
     //     return redirect()->route('restaurants.edit', $product->id)
     //         ->with('info', 'Restaurante agregado con éxito');
-    // }
+    }
 
     
 //IMPORTACIONES DE VENTAS DE ORIGENES EXTERNOS
@@ -100,7 +75,7 @@ class ModuserController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     
     public function create()
     {
        //
