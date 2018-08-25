@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tipomovimiento;
-use App\Clasemovimiento;
+use App\MovDia;
+use App\Product;
 use DB;
 class ModuserController extends Controller
 {
@@ -12,19 +12,38 @@ class ModuserController extends Controller
 //ENTRADA DE SUMINISTROS
     public function indexEntradas() 
     {
-
-
-}
-     public function createRestaurants()
-    {
-   
-        $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
-            $result = DB::statement($sql,array('I',11000001,200,1,1,NULL,NULL,NULL,'','0011-2233',0,8,1,'20120618',100104,'20120618',0));
-                var_dump($result);
-
-    //     return redirect()->route('restaurants.edit', $product->id)
-    //         ->with('info', 'Restaurante agregado con éxito');
+        $movdias = MovDia::paginate();
+        return view('userestaurant\entradas.index', compact('movdias'));
     }
+
+    public function showEntradas($CODPRO)
+    {
+        $movdia = MovDia::findOrFail($CODPRO);
+        dd($movdia);
+        // return view('entradas.show', compact('movdia'));
+    }
+
+
+
+    // public function edit($id)
+    // {
+    //     $product = Product::find($id);
+
+    //     return view('products.edit', compact('product'));
+    // }
+
+
+    //  public function createEntradas()
+    // {//(@CODPRO,@Cantidad,@ID_TipoMov,@ID_ClaseMov,@RestEnvia,@RestRecibe,@noProveedor,@ID_TipoDoc,@NumDoc,@Estado,@RestGra,@ID_Empresa,@Fecha,CONVERT(TIME,GETDATE()), @Usuario, @Fecha_Doc)          
+      
+    
+    //     $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+    //         $movdias = DB::statement($sql,array('I',11000001,200,1,1,NULL,NULL,NULL,'','0011-2233',0,8,1,'20120618',100104,'20120618',0));
+    //             var_dump($result);
+
+    // //     return redirect()->route('restaurants.edit', $product->id)
+    // //         ->with('info', 'Restaurante agregado con éxito');
+    // }
 
     
 //IMPORTACIONES DE VENTAS DE ORIGENES EXTERNOS

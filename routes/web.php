@@ -40,9 +40,17 @@ Route::get('canales.index', 'AdminproductController@indexCanales')->name('canale
 Route::get('fechas.index', 'AdminproductController@indexFechas')->name('fechas.index')->middleware('permission:fechas.index');
 
 
-//Modulo de Usuario
-Route::get('userestaurant/entradas.index', 'ModuserController@indexEntradas')->name('entradas.index')->middleware('permission:entradas.index');
 
+//Entrada de suministros
+Route::get('userestaurant/entradas.index','ModuserController@indexEntradas')->name('entradas.index')->middleware('permission:entradas.index');
+Route::get('userestaurant/entradas.show','ModuserController@showEntradas')->name('entradas.show')->middleware('permission:entradas.show');
+
+Route::get('userestaurant/entradas.create', 'ModuserController@createEntradas')->name('entradas.create')->middleware('permission:entradas.create');
+Route::get('userestaurant/entradas.edit', 'ModuserController@editEntradas')->name('entradas.edit')->middleware('permission:entradas.edit');
+
+
+
+//importaciones de algo
 Route::get('userestaurant/impexternas.index', 'ModuserController@indexImpexternas')->name('impexternas.index')->middleware('permission:impexternas.index');
 		
 Route::get('userestaurant/salidas.index', 'ModuserController@indexSalidas')->name('salidas.index')->middleware('permission:salidas.index');

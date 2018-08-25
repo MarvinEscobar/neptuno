@@ -29,6 +29,7 @@
                             <tr>
                                 <td>{{ $product->id }}</td>
                                 <td>{{ $product->name }}</td>
+                                {{-- Mostrar productos --}}
                                 @can('products.show')
                                 <td width="10px">
                                     <a href="{{ route('products.show', $product->id) }}" 

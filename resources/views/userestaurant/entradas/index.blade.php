@@ -7,8 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <b>Entradas</b>
-                    {{-- @can('canales.create')
-                    <a href="{{ route('canales.create') }}" 
+                    {{-- @can('userestaurant\entradas.create')
+                    <a href="{{ route('entradas.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
                         Crear
                     </a>
@@ -19,27 +19,30 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th width="10px">   ID</th>
-                                <th>                Entrada</th>
+                                <th width="10px">   Codigo</th>
+                                <th>                Cantidad</th>
+                                <th>                NumDoc</th>
                                 <th colspan="3">    &nbsp;</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {{-- @foreach($canales as $canal)
+                         <tbody>
+                            @foreach($movdias as $movdia)
                             <tr>
-                                <td>{{ $canal->id }}</td>
-                                <td>{{ $canal->name }}</td>
-                                @can('canales.show')
+                                <td>{{ $movdia->CODPRO }}</td>
+                                <td>{{ $movdia->Cantidad }}</td>
+                                <td>{{ $movdia->NumDoc }}</td>
+
+                                @can('userestaurant\entradas.show')
                                 <td width="10px">
-                                    <a href="{{ route('canales.show', $canal->id) }}" 
+                                    <a href="{{ route('entradas.show', $movdia->CODPRO) }}" 
                                     class="btn btn-sm btn-default">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                                @can('canales.edit')
+                             {{--   @can('userestaurant\entradas.edit')
                                 <td width="10px">
-                                    <a href="{{ route('canales.edit', $canal->id) }}" 
+                                    <a href="{{ route('userestaurant\entradas.edit', $movdia->CODPRO) }}" 
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
@@ -54,10 +57,10 @@
                                         </button>
                                     {!! Form::close() !!}
                                 </td>
-                                @endcan
+                                @endcan--}}
                             </tr>
-                            @endforeach --}}
-                        </tbody>
+                            @endforeach
+                        </tbody> 
                     </table>
                     {{-- {{ $canales->render() }} --}}
                 </div>
