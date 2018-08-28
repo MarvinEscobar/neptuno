@@ -6,46 +6,72 @@ use Illuminate\Http\Request;
 use App\MovDia;
 use DB;
 class ModuserController extends Controller
-{
- 
+{ 
 //ENTRADA DE SUMINISTROS
     public function indexEntradas() 
     {
         $movdias = MovDia::paginate();
         return view('userestaurant\entradas.index', compact('movdias'));
     }
-
-    public function showEntradas($NumDoc)
+//MUESTRA LA INFORMACIÓN DEL SUMUNISTRO SELECIONADO
+    public function showEntradas(Request $request, $NumDoc)
     {   
-        $movdia = MovDia::findOrFail($NumDoc);   
+        $movdia = MovDia::findOrFail($NumDoc);
+        // $values = ['S',$movdia->CODPRO, $request->Cantidad,$movdia->ID_TipoMov,$movdia->ID_ClaseMov,$movdia->RestEnvia,$movdia->RestRecibe,$movdia->noProveedor,$movdia->ID_TipoDoc,$movdia->NumDoc,$movdia->Estado,$movdia->RestGra,$movdia->ID_Empresa,$movdia->Fecha,$movdia->Usuario, $movdia->Fecha_Doc,0];
+        // $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+        // $movdias = DB::statement($sql,$values); 
         return view('userestaurant\entradas.show', compact('movdia'));
     }
-      
+//ENVIA AL FORMULARIO PARA INGRESAR LOS SUMINITROS
+    public function createEntradas()
+    {
+        return view('userestaurant\entradas.create');
+    }
+//GUARDAR DATOS ENVIADOS 
+    public function storeEntradas(Request $request)
+    {//(@CODPRO,@Cantidad,@ID_TipoMov,@ID_ClaseMov,@RestEnvia,@RestRecibe,@noProveedor,@ID_TipoDoc,@NumDoc,@Estado,@RestGra,@ID_Empresa,@Fecha,CONVERT(TIME,GETDATE()), @Usuario, @Fecha_Doc)
+    // 'I',11000001,200,1,1,NULL,NULL,NULL,'','0011-2233',0,8,1,'20120618',100104,'20120618',0 
+ 
+        $values = ['I',$request->CODPRO, $request->Cantidad,1,1,NULL,NULL,NULL,NULL,$request->NumDoc,0,8,1,'20120618',100104, '20120618',0];
+        $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+        $movdias = DB::statement($sql,$values);        
+        return redirect()->route('entradas.create')->with('info', 'Suministro agregado con éxito');
+    }
+//ENVIA AL FORMULARIO PARA EDITAR EL SUMINISTRO SELECIONADO      
     public function editEntradas($NumDoc)
     {
         $movdia = MovDia::findOrFail($NumDoc);
         return view('userestaurant\entradas.edit', compact('movdia'));
     }
+//EDITA EL SUMINISTRO QUE FUE SELECCIONADO
     public function updateEntradas(Request $request, $NumDoc)
     {      
-        $movdia = MovDia::findOrFail($NumDoc);
-        $movdia->update($request->all());
+        $movdia =MovDia::findOrFail($NumDoc);
+        var_dump($movdia);
+        // $movdia->update($request->all());
+        // $values = ['M',$movdia->CODPRO, $request->Cantidad,$movdia->ID_TipoMov,$movdia->ID_ClaseMov,$movdia->RestEnvia,$movdia->RestRecibe,$movdia->noProveedor,$movdia->ID_TipoDoc,$movdia->NumDoc,$movdia->Estado,$movdia->RestGra,$movdia->ID_Empresa,$movdia->Fecha,$movdia->Usuario, $movdia->Fecha_Doc,0];
+        // $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+        // $movdias = DB::statement($sql,$values);
+        // return redirect()->route('entradas.edit', $movdia->NumDoc)
+        // ->with('info', 'Suministro guardado con éxito');  
+    }
+//ELIMINA EL SUMINISTRO SELECCIONADO
+    public function destroyEntradas($CODPRO)
+    {
+        $movdia = MovDia::find($CODPRO);
+         var_dump($movdia);
 
-        return redirect()->route('entradas.edit', $movdia->NumDoc)->with('info', 'Producto guardado con éxito');
+        // $values = ['D',$movdia->CODPRO, $movdia->Cantidad,$movdia->ID_TipoMov,$movdia->ID_ClaseMov,$movdia->RestEnvia,$movdia->RestRecibe,$movdia->noProveedor,$movdia->ID_TipoDoc,$movdia->NumDoc,$movdia->Estado,$movdia->RestGra,$movdia->ID_Empresa,$movdia->Fecha,$movdia->Usuario, $movdia->Fecha_Doc,0];
+
+        // $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+
+        // $movdias = DB::statement($sql,$values);
+
+        // return back()->with('info', 'Suministro eliminado correctamente');
     }
 
 
-    //  public function createEntradas()
-    // {//(@CODPRO,@Cantidad,@ID_TipoMov,@ID_ClaseMov,@RestEnvia,@RestRecibe,@noProveedor,@ID_TipoDoc,@NumDoc,@Estado,@RestGra,@ID_Empresa,@Fecha,CONVERT(TIME,GETDATE()), @Usuario, @Fecha_Doc)          
-      
     
-    //     $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
-    //         $movdias = DB::statement($sql,array('I',11000001,200,1,1,NULL,NULL,NULL,'','0011-2233',0,8,1,'20120618',100104,'20120618',0));
-    //             var_dump($result);
-
-    // //     return redirect()->route('restaurants.edit', $product->id)
-    // //         ->with('info', 'Restaurante agregado con éxito');
-    // }
 
     
 //IMPORTACIONES DE VENTAS DE ORIGENES EXTERNOS

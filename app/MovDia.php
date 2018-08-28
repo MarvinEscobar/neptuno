@@ -13,5 +13,6 @@ class MovDia extends Model
 	public $incrementing = false;
 	public $timestamps = false;
 
-	
+	protected $fillable = [
+        'Cantidad', 'NumDoc', ];
 }

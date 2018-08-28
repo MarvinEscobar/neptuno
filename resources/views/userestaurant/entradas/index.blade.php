@@ -7,12 +7,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <b>Entradas</b>
-                    {{-- @can('userestaurant\entradas.create')
+                    @can('userestaurant\entradas.create')
                     <a href="{{ route('entradas.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
                         Crear
                     </a>
-                    @endcan --}}
+                    @endcan
                 </div>
 
                 <div class="panel-body">
@@ -21,7 +21,7 @@
                             <tr>
                                 <th width="10px">   Codigo</th>
                                 <th>                Cantidad</th>
-                                <th>                NumDoc</th>
+                                <th>                Numemero Doccumento</th>
                                 <th colspan="3">    &nbsp;</th>
                             </tr>
                         </thead>
@@ -35,34 +35,34 @@
                                 @can('userestaurant\entradas.show')
                                 <td width="10px">
                                     <a href="{{ route('entradas.show', $movdia->NumDoc) }}" 
-                                    class="btn btn-sm btn-info">
-                                        ver
+                                    class="btn btn-sm btn-default">
+                                        Ver
                                     </a>
                                 </td>
                                 @endcan
                             @can('userestaurant\entradas.edit')
                                 <td width="10px">
                                     <a href="{{ route('entradas.edit', $movdia->NumDoc) }}" 
-                                    class="btn btn-sm btn-default">
-                                        editar
+                                    class="btn btn-sm btn-info">
+                                        Editar
                                     </a>
                                 </td>
                                 @endcan
-                                 {{--   @can('canales.destroy')
+                                @can('canales.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['canales.destroy', $canal->id], 
+                                    {!! Form::open(['route' => ['entradas.destroy', $movdia->CODPRO], 
                                     'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
                                         </button>
                                     {!! Form::close() !!}
                                 </td>
-                                @endcan--}}
+                                @endcan
                             </tr>
                             @endforeach
                         </tbody> 
                     </table>
-                    {{-- {{ $canales->render() }} --}}
+                    {{ $movdias->render() }}
                 </div>
             </div>
         </div>

@@ -52,8 +52,8 @@ class ProductController extends Controller
     {
         $product = Product::create($request->all());
 
-        return redirect()->route('products.edit', $product->id)
-            ->with('info', 'Rol guardado con éxito');
+        return redirect()->route('products.create')
+            ->with('info', 'Producto guardado con éxito');
     }
 
     /**

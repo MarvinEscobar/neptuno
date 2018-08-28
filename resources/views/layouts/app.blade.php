@@ -33,39 +33,33 @@
                         {{ config('app.name', '') }}
                     </a>
                 </div>
-
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     @include("includes.nav_log")                        
-                    <!-- Right Side Of Navbar -->
-                    
+                    <!-- Right Side Of Navbar -->                    
                 </div>
-
             </div>
         </nav>
         <div class="sidebar-panel">
             @include("includes.nav")        
         </div>
-            @if(session('info'))
+            
+        <div class="content-panel">
+            @yield('content')
+        </div>
+    </div>
+    @if(session('info'))
                 <div class="container alert">
                     <div class="row">
                         <div class="col-md8 clo-md-offset-2">
                             <div class="alert alert-success">
                                 {{ session('info') }}
                                 
-                            </div>
-                                
-                            
-                        </div>
-                        
-                    </div>
-                    
+                            </div>                            
+                        </div>                        
+                    </div>                    
                 </div>
             @endif
-        <div class="content-panel">
-            @yield('content')
-        </div>
-    </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

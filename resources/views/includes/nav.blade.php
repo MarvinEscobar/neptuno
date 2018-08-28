@@ -73,11 +73,7 @@
         <a class="nav-link" href="{{ route('entradas.index') }}">Entradas</a>
         </li>
     @endcan
-    @can('entradas.index')
-        <li class="nav-item">
-        <a class="nav-link" href="{{ route('entradas.index') }}">Entradas</a>
-        </li>
-    @endcan
+    
     @can('impexternas.index')
         <li class="nav-item">
         <a class="nav-link" href="{{ route('impexternas.index') }}">Importaciones de ventas</a>
