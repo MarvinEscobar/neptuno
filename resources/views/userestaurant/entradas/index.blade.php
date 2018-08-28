@@ -34,21 +34,21 @@
 
                                 @can('userestaurant\entradas.show')
                                 <td width="10px">
-                                    <a href="{{ route('entradas.show', $movdia->CODPRO) }}" 
-                                    class="btn btn-sm btn-default">
+                                    <a href="{{ route('entradas.show', $movdia->NumDoc) }}" 
+                                    class="btn btn-sm btn-info">
                                         ver
                                     </a>
                                 </td>
                                 @endcan
-                             {{--   @can('userestaurant\entradas.edit')
+                            @can('userestaurant\entradas.edit')
                                 <td width="10px">
-                                    <a href="{{ route('userestaurant\entradas.edit', $movdia->CODPRO) }}" 
+                                    <a href="{{ route('entradas.edit', $movdia->NumDoc) }}" 
                                     class="btn btn-sm btn-default">
                                         editar
                                     </a>
                                 </td>
                                 @endcan
-                                @can('canales.destroy')
+                                 {{--   @can('canales.destroy')
                                 <td width="10px">
                                     {!! Form::open(['route' => ['canales.destroy', $canal->id], 
                                     'method' => 'DELETE']) !!}

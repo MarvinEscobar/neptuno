@@ -29,7 +29,6 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::paginate();
-
         return view('products.index', compact('products'));
     }
 
@@ -63,10 +62,8 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        $product = Product::find($id);
-
         return view('products.show', compact('product'));
     }
 
@@ -79,7 +76,6 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-
         return view('products.edit', compact('product'));
     }
 
@@ -108,7 +104,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id)->delete();
-
         return back()->with('info', 'Usurio eliminado correctamente');
     }
 }

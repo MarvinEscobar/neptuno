@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MovDia;
-use App\Product;
 use DB;
 class ModuserController extends Controller
 {
@@ -16,21 +15,24 @@ class ModuserController extends Controller
         return view('userestaurant\entradas.index', compact('movdias'));
     }
 
-    public function showEntradas($CODPRO)
-    {
-        $movdia = MovDia::findOrFail($CODPRO);
-        dd($movdia);
-        // return view('entradas.show', compact('movdia'));
+    public function showEntradas($NumDoc)
+    {   
+        $movdia = MovDia::findOrFail($NumDoc);   
+        return view('userestaurant\entradas.show', compact('movdia'));
     }
+      
+    public function editEntradas($NumDoc)
+    {
+        $movdia = MovDia::findOrFail($NumDoc);
+        return view('userestaurant\entradas.edit', compact('movdia'));
+    }
+    public function updateEntradas(Request $request, $NumDoc)
+    {      
+        $movdia = MovDia::findOrFail($NumDoc);
+        $movdia->update($request->all());
 
-
-
-    // public function edit($id)
-    // {
-    //     $product = Product::find($id);
-
-    //     return view('products.edit', compact('product'));
-    // }
+        return redirect()->route('entradas.edit', $movdia->NumDoc)->with('info', 'Producto guardado con éxito');
+    }
 
 
     //  public function createEntradas()

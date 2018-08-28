@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Producto</div>
                 <div class="panel-body">
-   				{{ Form::open(['route' => 'userestaurant\entradas.store']) }}
+   				{{ Form::open(['route' => 'entradas.store']) }}
 
                         @include('userestaurant\entradas.partials.form')
                         

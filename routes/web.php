@@ -43,10 +43,10 @@ Route::get('fechas.index', 'AdminproductController@indexFechas')->name('fechas.i
 
 //Entrada de suministros
 Route::get('userestaurant/entradas.index','ModuserController@indexEntradas')->name('entradas.index')->middleware('permission:entradas.index');
-Route::get('userestaurant/entradas.show','ModuserController@showEntradas')->name('entradas.show')->middleware('permission:entradas.show');
-
-Route::get('userestaurant/entradas.create', 'ModuserController@createEntradas')->name('entradas.create')->middleware('permission:entradas.create');
-Route::get('userestaurant/entradas.edit', 'ModuserController@editEntradas')->name('entradas.edit')->middleware('permission:entradas.edit');
+Route::get('userestaurant/entradas.show/{NumDoc}','ModuserController@showEntradas')->name('entradas.show')->middleware('permission:entradas.show');
+Route::get('userestaurant/entradas.edit/{NumDoc}/edit', 'ModuserController@editEntradas')->name('entradas.edit')->middleware('permission:entradas.edit');
+Route::get('userestaurant/entradas.update', 'ModuserController@updateEntradas')->name('entradas.update')->middleware('permission:entradas.update');	
+ 	
 
 
 

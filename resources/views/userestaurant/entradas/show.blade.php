@@ -5,11 +5,11 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Entrada de suministros</div>
+                <div class="panel-heading">Suministros Existentes</div>
 
                 <div class="panel-body">                                        
-                    <p><strong>Codigo: </strong>{{ $movdia->CODPRO }}</p>
-                    <p><strong>Numero de factura: </strong>{{ $movdia->NumDoc }}</p>
+                    <p><strong>Numero de factura:  </strong>  {{ $movdia->CODPRO}}</p>
+                    <p><strong>Cantidad de producto:  </strong>  {{ $movdia->Cantidad}}</p>
                 </div>
             </div>
         </div>

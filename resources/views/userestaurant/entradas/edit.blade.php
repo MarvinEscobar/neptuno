@@ -8,7 +8,7 @@
                 <div class="panel-heading">Producto</div>
 
                 <div class="panel-body">                    
-                    {!! Form::model($movdia, ['route' => ['entradas.update', $movdia->CODPRO],
+                    {!! Form::model($movdia, ['route' => ['entradas.update', $movdia->NumDoc],
                     'method' => 'PUT']) !!}
 
                         @include('userestaurant\entradas.partials.form')

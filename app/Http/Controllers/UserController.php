@@ -22,7 +22,6 @@ public function __construct(){
     public function index()
     {
         $users = User::paginate();
-
         return view('users.index', compact('users'));
     }
 
@@ -32,11 +31,9 @@ public function __construct(){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $user = User::find($id);
-
-        return view('users.show', compact('user'));
+    public function show(User $user)
+    {      
+          return view('users.show', compact('user'));
     }
 
     /**
@@ -49,7 +46,6 @@ public function __construct(){
     {
         $user = User::find($id);
         $roles = Role::get();
-
         return view('users.edit', compact('user', 'roles'));
     }
 
@@ -64,7 +60,6 @@ public function __construct(){
     {
         $user = User::find($id);
         $user->update($request->all());
-
         $user->roles()->sync($request->get('roles'));
 
         return redirect()->route('users.edit', $user->id)
@@ -80,7 +75,6 @@ public function __construct(){
     public function destroy($id)
     {
         $user = User::find($id)->delete();
-
         return back()->with('info', 'Eliminado correctamente');
     }
 }
