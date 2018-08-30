@@ -23,3 +23,6 @@
     </div>
 </div>
 @endsection
+@section('script')
+<script src="{{ asset('js/script.js') }}"></script>
+@endsection

@@ -6,7 +6,10 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <b>Entradas</b>
+                   <span id="movdias-total"> <b>{{ $movdias->total() }} 
+                        registros | paginas
+                        {{ $movdias->currentPage() }} de 
+                        {{ $movdias->lastPage() }} Entrada de productos</b></span>
                     @can('userestaurant\entradas.create')
                     <a href="{{ route('entradas.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
@@ -52,23 +55,20 @@
                                 <td width="10px">
                                     {!!Form::open(['route' => ['entradas.destroy', $movdia->NumDoc], 
                                     'method' => 'DELETE'])!!}
-                                        <button class="btn btn-sm btn-danger">
+                                        <button class="btn btn-delete btn-sm btn-danger">
                                             Eliminar
                                         </button>
                                     {!! Form::close() !!}
                                 </td>
-                                @endcan
-                          
-                            </tr>
-                           
+                                @endcan                          
+                            </tr>                           
                             @endforeach
                         </tbody> 
                     </table>
                     {{ $movdias->render() }}
-
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 </div>
 @endsection

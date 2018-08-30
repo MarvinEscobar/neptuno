@@ -87,8 +87,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-      
+    {      
         $product = Product::find($id);
         $product->update($request->all());
 
@@ -101,9 +100,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $product = Product::find($id)->delete();
-        return back()->with('info', 'Usurio eliminado correctamente');
+        return back()->with('info', 'Usurio eliminado correctamente');        
     }
 }

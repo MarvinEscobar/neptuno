@@ -25,35 +25,13 @@ class ModuserController extends Controller
         return view('userestaurant\entradas.create');
     }
 //GUARDAR DATOS ENVIADOS 
-    // public function storeEntradas(Request $request)
-    // {
-    //     $values = ['I',$request->CODPRO, $request->Cantidad,1,1,NULL,NULL,NULL,NULL,$request->NumDoc,0,8,1,'20120618',100104, '20120618',0];
-    //     $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
-    //     $movdia = DB::statement($sql,$values);        
-    //     return redirect()->route('entradas.create')->with('info', 'Suministro agregado con éxito');
-    // }
-//Auto complement
     public function storeEntradas(Request $request)
     {
-        $term = Input::get('term');
-    
-    $results = array();
-    
-    $queries = DB::table('users')
-        ->where('name', 'LIKE', '%'.$term.'%')
-        ->orWhere('mail', 'LIKE', '%'.$term.'%')
-        ->take(5)->get();
-    
-    foreach ($queries as $query)
-    {
-        $results[] = [ 'id' => $query->id, 'value' => $query->name.' '.$query->mail ];
+        $values = ['I',$request->CODPRO, $request->Cantidad,1,1,NULL,NULL,NULL,NULL,$request->NumDoc,0,8,1,'20120618',100104, '20120618',0];
+        $sql = "EXEC SP_MOVIMIENTO_DIA ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+        $movdia = DB::statement($sql,$values);        
+        return redirect()->route('entradas.create')->with('info', 'Suministro agregado con éxito');
     }
-return Response::json($results);
-
-    }
-
-
-
 //ENVIA AL FORMULARIO PARA EDITAR EL SUMINISTRO SELECIONADO      
     public function editEntradas(MovDia $movdia)
     {

@@ -5,17 +5,20 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <b>Productos</b>
+                <div class="panel-heading"> 
+                    <div class="panel-body">
+
+                   <span id="movdias-total"> <b>{{ $products->total() }} 
+                        registros | paginas
+                        {{ $products->currentPage() }} de 
+                        {{ $products->lastPage() }} Entrada de productos</b></span>                     
                     @can('products.create')
                     <a href="{{ route('products.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
                         Crear
                     </a>
                     @endcan
-                </div>
-
-                <div class="panel-body">
+                </div>                                 
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
