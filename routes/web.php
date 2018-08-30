@@ -42,13 +42,22 @@ Route::get('fechas.index', 'AdminproductController@indexFechas')->name('fechas.i
 
 
 //Entrada de suministros
-Route::get('userestaurant/entradas.index','ModuserController@indexEntradas')->name('entradas.index')->middleware('permission:entradas.index');
-Route::get('userestaurant/entradas.show/{NumDoc}','ModuserController@showEntradas')->name('entradas.show')->middleware('permission:entradas.show');
-Route::get('userestaurant/entradas.create','ModuserController@createEntradas')->name('entradas.create')->middleware('permission:entradas.create');
-Route::post('userestaurant/entradas.store','ModuserController@storeEntradas')->name('entradas.store')->middleware('permission:entradas.create');
-Route::get('userestaurant/entradas.edit/{NumDoc}/edit', 'ModuserController@editEntradas')->name('entradas.edit')->middleware('permission:entradas.edit');
-Route::put('userestaurant/entradas.update/{NumDoc}', 'ModuserController@updateEntradas')->name('entradas.update')->middleware('permission:entradas.update');
-Route::delete('userestaurant/entradas.destroy/{CODPRO}', 'ModuserController@destroyEntradas')->name('entradas.destroy')->middleware('permission:entradas.destroy');	
+Route::get('userestaurant/entradas.index','ModuserController@indexEntradas')->name('entradas.index')
+->middleware('permission:entradas.index');
+Route::get('userestaurant/entradas.show/{movdia}','ModuserController@showEntradas')->name('entradas.show')
+->middleware('permission:entradas.show');
+Route::get('userestaurant/entradas.create','ModuserController@createEntradas')->name('entradas.create')
+->middleware('permission:entradas.create');
+Route::post('userestaurant/entradas.store','ModuserController@storeEntradas')->name('entradas.store')
+->middleware('permission:entradas.create');
+Route::get('userestaurant/entradas.edit/{movdia}/edit', 'ModuserController@editEntradas')
+->name('entradas.edit')->middleware('permission:entradas.edit');
+
+Route::put('userestaurant/entradas.update/{movdia}', 'ModuserController@updateEntradas')
+->name('entradas.update')->middleware('permission:entradas.update');
+
+Route::delete('userestaurant/entradas.destroy/{movdia}', 'ModuserController@destroyEntradas')
+->name('entradas.destroy')->middleware('permission:entradas.destroy');
 
  	
 

@@ -48,21 +48,24 @@
                                     </a>
                                 </td>
                                 @endcan
-                                @can('canales.destroy')
+                           @can('userestaurant\entradas.destroy')
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['entradas.destroy', $movdia->CODPRO], 
-                                    'method' => 'DELETE']) !!}
+                                    {!!Form::open(['route' => ['entradas.destroy', $movdia->NumDoc], 
+                                    'method' => 'DELETE'])!!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
                                         </button>
                                     {!! Form::close() !!}
                                 </td>
                                 @endcan
+                          
                             </tr>
+                           
                             @endforeach
                         </tbody> 
                     </table>
                     {{ $movdias->render() }}
+
                 </div>
             </div>
         </div>

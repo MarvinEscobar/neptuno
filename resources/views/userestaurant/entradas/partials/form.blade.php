@@ -1,5 +1,5 @@
 <div class="panel-body">
-            <table class="table table-striped table-hover">
+        {{--     <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>{{ Form::label('CODPRO', 'Codigo') }}</th>
@@ -15,5 +15,22 @@
 				</tbody>
                     </tr>
                 </thead>
-            </table>	
+            </table>	 --}}
+
+            {{ Form::open(['action' => ['ModuserController@storeEntradas'], 'method' => 'GET']) }}
+            {{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Enter name'])}}
+            {{ Form::submit('Search', array('class' => 'button expand')) }}
+            {{ Form::close() }}
 </div>
+<script>
+$(function()
+{
+     $( "#q" ).autocomplete({
+      source: "userestaurant/entradas.store",
+      minLength: 3,
+      select: function(event, ui) {
+        $('#q').val(ui.item.value);
+      }
+    });
+});
+</script>
