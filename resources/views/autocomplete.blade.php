@@ -1,20 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+	<div class="container box">
+		{{ Form::open(['route' => 'products.store','method' => 'POST']) }}
+    		<div class="form-group">    	
+				{{ Form::label('Descripcion', 'Descripcion del producto') }}
+				{{ Form::text('Descripcion', null, ['class' => 'form-control','placeholder' => 'Ingrese nombre del producto']) }}
+				<div id="materialList">
+				</div>			
+			</div>
+		 {!! Form::close() !!}
+	</div>                         
 
-  <div class="container box">
-      
-   <div class="form-group">
-    <input type="text" id="name" class="form-control input-lg" placeholder="Enter Country Name" />
-    <div id="productList">
-    </div>
-   </div>
-   {{ csrf_field() }}
-  </div>
   <script>
 $(document).ready(function(){
 
- $('#name').keyup(function(){ 
+ $('#Descripcion').keyup(function(){ 
         var query = $(this).val();
         if(query != '')
         {
@@ -24,19 +25,17 @@ $(document).ready(function(){
           method:"POST",
           data:{query:query, _token:_token},
           success:function(data){
-           $('#productList').fadeIn();  
-                    $('#productList').html(data);
+           $('#materialList').fadeIn();  
+                    $('#materialList').html(data);
           }
          });
         }
     });
 
     $(document).on('click', 'li', function(){  
-        $('#name').val($(this).text());  
-        $('#productList').fadeOut();  
+        $('#Descripcion').val($(this).text());  
+        $('#materialList').fadeOut();  
     });  
-
 });
 </script>
-  @endsection
-
+@endsection

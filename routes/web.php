@@ -6,8 +6,10 @@ Route::get ('/', function() {
 	return view('welcome');
 
 });
-Route::get('/autocomplete', 'AutocompleteController@index');
+Route::get('/autoindex', 'AutocompleteController@index');
+Route::get('/autocomplete', 'AutocompleteController@index')->name('autocomplete');
 Route::post('/autocomplete/fetch', 'AutocompleteController@fetch')->name('autocomplete.fetch');
+
 
 
 Auth::routes();
